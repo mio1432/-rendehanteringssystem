@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --outline: 1px dotted red;
+}
+body{
+    height:100vh;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 40px 500px 40px 100px;
+    background: #f8f4f4;
+}
