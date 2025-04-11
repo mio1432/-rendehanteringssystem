@@ -11,23 +11,25 @@ if (isset($_POST['btn'])) {
             $rad = mysqli_fetch_assoc($result);
             $_SESSION['user'] = $rad['username'];
             $_SESSION['level'] = $rad['userlevel'];
-            header("Location: index.php");
-            exit(); // <- superviktig!
+            header("Location: logg.php"); // redirecta till sig själv efter lyckad inloggning
+            exit();
         } else {
             $_SESSION['user'] = "";
-            $_SESSION['level'] = "";
+            $_SESSION['level'] = "5ddf";
             $error = "Fel användarnamn eller lösenord!";
         }
     }
 }
+
+// Hämta användarens nivå från sessionen
+$level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logga In</title>
+    <title>Logga In - FlensFastigheter</title>
     <link rel="stylesheet" href="stylelogg.css">
 </head>
 <body>
@@ -36,22 +38,34 @@ if (isset($_POST['btn'])) {
         <div class="hem"><a href="index.php">Hem</a></div>
         <div class="logg"><a href="logg.php">Logga In</a></div>
         <div class="om"><a href="kon.php">Kontakt</a></div>
+            <?php if($level >= 10){ ?>
+                <a href="an.php">Ärende</a>
+            <?php } ?>
+            <?php if($level >= 10){ ?>
+                <a href="logout.php">Logga ut</a>
+            <?php } ?>
+        </div>
     </div>
 
     <?php
-    if (isLevel(10)) {
-        echo "<h1>Välkommen " . $_SESSION['user'] . "</h1>";
-        echo "<a href='index.php'>Till startsidan</a>";
-    } else {
+    if (isLevel(10)) { ?>
+    <div class="box">
+        <h1 class='welcome'>Välkommen <?=$_SESSION['user']?>!</h1>
+        <p><a href='index.php'>Till startsidan</a></p>
+        <p><a href='logout.php'>Logga ut</a></p>
+    </div>
+ <?php   } else {
         if (isset($error)) {
             echo "<p style='color:red;'>$error</p>";
         }
     ?>
-    <form action="logg.php" method="POST">
-        <input type="text" id="name" name="name" required placeholder="Skriv in användarnamn här">
-        <input type="password" name="pass" id="pass" required placeholder="Skriv in lösenord här">
-        <input type="submit" name="btn" value="Logga in">
-    </form>
+    <div class="l">
+        <form action="logg.php" method="POST">
+            <input type="text" id="name" name="name" required placeholder="Skriv in användarnamn här">
+            <input type="password" name="pass" id="pass" required placeholder="Skriv in lösenord här">
+            <input type="submit" name="btn" value="Logga in">
+        </form>
+    </div>
     <?php } ?>
 </body>
 </html>

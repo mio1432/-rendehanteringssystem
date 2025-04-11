@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <?php
+session_start();
+if (isset($_SESSION['5ddf'])) {
+    $level = intval($_SESSION['5ddf']);
+}
+else {
+    $level = 10;
+}
+?>
+<?php
 $server="localhost";
 $username="root";
 $password="";
@@ -27,9 +36,14 @@ if(isset($_POST["submit"])){
     <div id="stuff">
         <div class="hem"><a href="index.php">Hem</a></div>
         <div class="logg"><a href="logg.php">Logga In</a></div>
-        <div class="kon"><a href="kon.php">Kontakt</a></div>
-        
-    </div>
+        <div class="om"><a href="kon.php">Kontakt</a></div>
+            <?php if($level >= 10){ ?>
+                <a href="an.php">Ärende</a>
+            <?php } ?>
+            <?php if($level >= 10){ ?>
+                <a href="logout.php">Logga ut</a>
+            <?php } ?>
+        </div>
     <div class="mid"></div>
     <div class="bildb"></div>
     <div class="bild"><img src="flensfastighet.png" alt=""></div>
