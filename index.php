@@ -30,7 +30,11 @@ if(isset($_POST["submit"])){
         <div class="kon"><a href="kon.php">Kontakt</a></div>
         
     </div>
-    <div class="bild"><img src="flensfastighet" alt=""></div>
+    <div class="mid"></div>
+    <div class="bildb"></div>
+    <div class="bild"><img src="flensfastighet.png" alt=""></div>
+    <div class="flenbild"><img src="flenrum.png" alt=""></div>
+    
     
 
 
