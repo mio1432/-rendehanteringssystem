@@ -22,8 +22,9 @@ if(isset($_POST["submit"])){
     
 }
 
-
+$level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

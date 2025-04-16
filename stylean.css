@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #3E5F4C;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#felanmalan-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#felanmalan-form h2 {
+    font-size: 1.5rem;
+    color: #3E5F4C;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#felanmalan-form input, #felanmalan-form select, #felanmalan-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#felanmalan-form input[type="submit"] {
+    background-color: #3E5F4C;
+    color: white;
+    cursor: pointer;
+}
+
+#felanmalan-form input[type="submit"]:hover {
+    background-color: #2e4d3c;
+}
+
+.error-msg {
+    background-color: #ffe5e5;
+    color: #b30000;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #b30000;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}

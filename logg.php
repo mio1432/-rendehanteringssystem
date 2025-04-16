@@ -50,9 +50,9 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
     <?php
     if (isLevel(10)) { ?>
     <div class="box">
-        <h1 class='welcome'>Välkommen <?=$_SESSION['user']?>!</h1>
-        <p><a href='index.php'>Till startsidan</a></p>
-        <p><a href='logout.php'>Logga ut</a></p>
+        <h1 id='welcome'>Välkommen <?=$_SESSION['user']?>!</h1>
+        <p><a href='index.php'id="start" >Till startsidan</a></p>
+        <p><a href='logout.php'id="lo" >Logga ut</a></p>
     </div>
  <?php   } else {
         if (isset($error)) {
@@ -60,12 +60,20 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
         }
     ?>
     <div class="l">
+    <div class="login-box">
+        <?php if (isset($error)) : ?>
+            <div class="error-msg"><?= $error ?></div>
+        <?php endif; ?>
+
         <form action="logg.php" method="POST">
-            <input type="text" id="name" name="name" required placeholder="Skriv in användarnamn här">
-            <input type="password" name="pass" id="pass" required placeholder="Skriv in lösenord här">
-            <input type="submit" name="btn" value="Logga in">
+            <h2>Logga in</h2>
+            <input type="text" id="name" name="name" required placeholder="Användarnamn">
+            <input type="password" name="pass" id="pass" required placeholder="Lösenord">
+            <input type="submit" id="b" name="btn" value="Logga in">
         </form>
     </div>
+</div>
+
     <?php } ?>
 </body>
 </html>
