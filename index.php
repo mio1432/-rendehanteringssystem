@@ -36,7 +36,9 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
     <div class="header"><h1>FlensFastigheter</h1></div>
     <div id="stuff">
         <div class="hem"><a href="index.php">Hem</a></div>
-        <div class="logg"><a href="logg.php">Logga In</a></div>
+        <?php if($level < 10){ ?>
+                <a href="logg.php">Logga In</a>
+            <?php } ?>
         <div class="om"><a href="kon.php">Kontakt</a></div>
             <?php if($level >= 10){ ?>
                 <a href="an.php">Ärende</a>

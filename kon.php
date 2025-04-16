@@ -1,4 +1,6 @@
 <?php
+require_once("inc.php");
+$conn = conn("projdb");
 $server="localhost";
 $username="root";
 $password="";
@@ -12,7 +14,7 @@ if(isset($_POST["submit"])){
     
 }
 
-
+$level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
 ?>
 <html lang="en">
 <head>
@@ -26,7 +28,14 @@ if(isset($_POST["submit"])){
 <div class="header"><h1>FlensFastigheter</h1></div>
     <div id="stuff">
         <div class="hem"><a href="index.php">Hem</a></div>
-        <div class="logg"><a href="logg.php">Logga In</a></div>
-        <div class="om"><a href="kon.php">Kontakt</a></div>
+        <?php if($level < 10){ ?>
+                <a href="logg.php">Logga In</a>
+            <?php } ?>
+        <?php if($level >= 10){ ?>
+                <a href="an.php">Ärende</a>
+            <?php } ?>
+        <?php if($level >= 10){ ?>
+                <a href="logout.php">Logga ut</a>
+            <?php } ?>
         
     </div>

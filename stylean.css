@@ -1,21 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f4f4;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 40px auto 80px;
+    background: #f8f4f4;
 }
 
 .header {
     background-color: #3E5F4C;
-    color: white;
     padding: 20px;
-    text-align: center;
+    align-items: center;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+}
+.header h1 {
+    color: #EDEDED;
+    font-size: 2rem;
+    padding: 0 100px;
+}
+
+#stuff {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    background-color: #3E5F4C;
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+a {
+    font-size: 1.5rem;
+    color: #EDEDED;
 }
 
 #felanmalan-form {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/5;
+    grid-row: 3/5;
     max-width: 600px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 30px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -25,34 +57,49 @@ body {
     font-size: 1.5rem;
     color: #3E5F4C;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-#felanmalan-form input, #felanmalan-form select, #felanmalan-form textarea {
+#felanmalan-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #3E5F4C;
+}
+
+#felanmalan-form input,
+#felanmalan-form select,
+#felanmalan-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+#felanmalan-form textarea {
+    resize: none;
+    height: 120px;
 }
 
 #felanmalan-form input[type="submit"] {
     background-color: #3E5F4C;
     color: white;
+    font-size: 1rem;
+    border: none;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #felanmalan-form input[type="submit"]:hover {
     background-color: #2e4d3c;
 }
 
-.error-msg {
-    background-color: #ffe5e5;
-    color: #b30000;
+.success-msg {
+    background-color: #e2f5e9;
+    color: #20633e;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #b30000;
-    border-radius: 5px;
     text-align: center;
-    font-size: 0.9rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
