@@ -8,7 +8,7 @@ body{
     height:100vh;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 40px 500px 40px 100px;
+    grid-template-rows: 100px 40px 500px 500px 100px;
     background: #f8f4f4;
 }
 .header{
@@ -22,6 +22,7 @@ body{
     color: #EDEDED;
     font-size: 2rem;
     padding: 0 100px;
+    font-family: 'Poppins', sans-serif;
     
 }
 #stuff{
@@ -37,6 +38,7 @@ body{
 a{
     font-size: 1.5rem;
     color: #EDEDED;
+    font-family: 'Poppins', sans-serif;
 }
 .mid{
     display: flex;
@@ -82,4 +84,54 @@ a{
     height: 100%;
     object-fit: cover;
     border-radius: 30px;
+}
+
+.om {
+    display: flex;
+    grid-row: 4/5;
+    grid-column: 1/5;
+    justify-content: center;
+    align-items: center;
+    background: #F4F4F4;
+    padding: 40px 20px;
+}
+
+.om-container {
+    max-width: 900px;
+    --text-align: center;
+    background-color: #3E5F4C; /* Mörk bakgrund för kontrast */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Lite skugga */
+}
+
+.om-container h2 {
+    font-size: 2rem;
+    color: #EDEDED; /* Vit text för kontrast */
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.om-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #EDEDED; /* Ljus text för bättre läsbarhet */
+    font-family: 'Roboto', sans-serif;
+}
+.footer {
+    grid-row: 5/6;
+    grid-column: 1/5;
+    background-color: #3E5F4C;
+    color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
 }

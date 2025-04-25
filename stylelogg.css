@@ -8,7 +8,7 @@ body{
     height:100vh;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 40px 500px 40px 100px;
+    grid-template-rows: 100px 40px 500px 100px;
     background: #f8f4f4;
 }
 .header{
@@ -22,6 +22,7 @@ body{
     color: #EDEDED;
     font-size: 2rem;
     padding: 0 100px;
+    font-family: 'Poppins', sans-serif;
     
 }
 #stuff{
@@ -37,6 +38,7 @@ body{
 a{
     font-size: 1.5rem;
     color: #EDEDED;
+    font-family: 'Roboto', sans-serif;
 }
 .mid{
     display: flex;
@@ -128,3 +130,19 @@ a{
     padding: 0 20px;
 }
 
+.footer {
+    grid-row: 4/5;
+    grid-column: 1/5;
+    background-color: #3E5F4C;
+    color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+}

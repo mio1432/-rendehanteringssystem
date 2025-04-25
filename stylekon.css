@@ -22,6 +22,7 @@ body{
     color: #EDEDED;
     font-size: 2rem;
     padding: 0 100px;
+    font-family: 'Poppins', sans-serif;
     
 }
 #stuff{
@@ -37,5 +38,22 @@ body{
 a{
     font-size: 1.5rem;
     color: #EDEDED;
+    font-family: 'Roboto', sans-serif;
 }
 
+.footer {
+    grid-row: 5/6;
+    grid-column: 1/5;
+    background-color: #3E5F4C;
+    color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+}
