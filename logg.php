@@ -11,7 +11,7 @@ if (isset($_POST['btn'])) {
         if (mysqli_num_rows($result) == 1) {
             $rad = mysqli_fetch_assoc($result);
             $_SESSION['user'] = $rad['username'];
-            $_SESSION['level'] = intval($rad['userlevel']); // säkerställ att det är ett heltal
+            $_SESSION['level'] = intval($rad['userlevel']); 
 
             // Skicka admin (level 100) till adminpanel
             if ($_SESSION['level'] === 100) {
@@ -23,7 +23,7 @@ if (isset($_POST['btn'])) {
             }
         } else {
             $_SESSION['user'] = "";
-            $_SESSION['level'] = 0; // sätt till 0 för att undvika strul
+            $_SESSION['level'] = 0; 
             $error = "Fel användarnamn eller lösenord!";
         }
     }

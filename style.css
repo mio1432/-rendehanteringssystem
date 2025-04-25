@@ -99,15 +99,15 @@ a{
 .om-container {
     max-width: 900px;
     --text-align: center;
-    background-color: #3E5F4C; /* Mörk bakgrund för kontrast */
+    background-color: #3E5F4C; 
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Lite skugga */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .om-container h2 {
     font-size: 2rem;
-    color: #EDEDED; /* Vit text för kontrast */
+    color: #EDEDED; 
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -116,7 +116,7 @@ a{
 .om-container p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #EDEDED; /* Ljus text för bättre läsbarhet */
+    color: #EDEDED; 
     font-family: 'Roboto', sans-serif;
 }
 .footer {

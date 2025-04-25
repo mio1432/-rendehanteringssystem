@@ -66,8 +66,8 @@ a{
 
 .login-box {
     width: 100%;
-    max-width: 500px; /* tidigare 300px – nu större */
-    padding: 40px;     /* mer padding för att göra den högre */
+    max-width: 500px; 
+    padding: 40px;     
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 15px;

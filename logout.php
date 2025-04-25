@@ -1,8 +1,8 @@
 <?php
 session_start();
 session_unset();
-session_destroy(); // Destroy the session to log out the user
+session_destroy(); 
 
-header("Location: index.php"); // Redirect to the home page after logout
-exit(); // Ensure no further code is executed after the redirect
+header("Location: index.php"); 
+exit(); 
 ?>

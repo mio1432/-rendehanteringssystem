@@ -60,8 +60,8 @@ table {
     grid-column: 1/5;
     width: 75%;
     border-collapse: collapse;
-    justify-self: center;  /* Centrera horisontellt */
-    align-self: center;    /* Centrera vertikalt */
+    justify-self: center;  
+    align-self: center;    
     background: #F4F4F4;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }

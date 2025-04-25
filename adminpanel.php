@@ -8,7 +8,7 @@ if (!isset($_SESSION['level']) || $_SESSION['level'] != 100) {
     exit();
 }
 
-// Uppdatera status om admin har skickat formulär
+
 if (isset($_POST['update_status'])) {
     $id = intval($_POST['id']);
     $new_status = $_POST['status'];
@@ -66,7 +66,7 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
         <th>Status</th>
         <th>Datum</th>
         <th>Ändra status</th>
-        <th>Ta bort</th> <!-- Ny kolumn för borttagning -->
+        <th>Ta bort</th> 
     </tr>
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
