@@ -6,20 +6,29 @@ if (isset($_POST['btn'])) {
     $name = $_POST['name'];
     $pass = $_POST['pass'];
     $sql = "SELECT * FROM tbluser WHERE username='$name' AND password='$pass'";
+    
     if ($result = mysqli_query($conn, $sql)) {
         if (mysqli_num_rows($result) == 1) {
             $rad = mysqli_fetch_assoc($result);
             $_SESSION['user'] = $rad['username'];
-            $_SESSION['level'] = $rad['userlevel'];
-            header("Location: logg.php"); // redirecta till sig själv efter lyckad inloggning
-            exit();
+            $_SESSION['level'] = intval($rad['userlevel']); // säkerställ att det är ett heltal
+
+            // Skicka admin (level 100) till adminpanel
+            if ($_SESSION['level'] === 100) {
+                header("Location: adminpanel.php");
+                exit();
+            } else {
+                header("Location: logg.php"); // Vanlig användare
+                exit();
+            }
         } else {
             $_SESSION['user'] = "";
-            $_SESSION['level'] = "5ddf";
+            $_SESSION['level'] = 0; // sätt till 0 för att undvika strul
             $error = "Fel användarnamn eller lösenord!";
         }
     }
 }
+
 
 // Hämta användarens nivå från sessionen
 $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
@@ -45,6 +54,9 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
             <?php } ?>
             <?php if($level >= 10){ ?>
                 <a href="logout.php">Logga ut</a>
+            <?php } ?>
+            <?php if($level >= 100){ ?>
+                <a href="adminpanel.php">Admin</a>
             <?php } ?>
         </div>
     </div>

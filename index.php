@@ -46,6 +46,9 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
             <?php if($level >= 10){ ?>
                 <a href="logout.php">Logga ut</a>
             <?php } ?>
+            <?php if($level >= 100){ ?>
+                <a href="adminpanel.php">Admin</a>
+            <?php } ?>
         </div>
     <div class="mid"></div>
     <div class="bildb"></div>
