@@ -48,7 +48,7 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
                 <a href="an.php">Ärende</a>
             <?php } ?>
             <?php if($level >= 10){ ?>
-                <a href="logout.php">Logga ut</a>
+                <a href="logout.php">Logga Ut</a>
             <?php } ?>
             <?php if($level >= 100){ ?>
                 <a href="adminpanel.php">Admin</a>

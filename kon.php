@@ -39,7 +39,19 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
                 <a href="an.php">Ärende</a>
             <?php } ?>
         <?php if($level >= 10){ ?>
-                <a href="logout.php">Logga ut</a>
+                <a href="logout.php">Logga Ut</a>
+            <?php } ?>
+            <?php if($level >= 100){ ?>
+                <a href="adminpanel.php">Admin</a>
             <?php } ?>
         
     </div>
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 FlensFastigheter. Alla rättigheter förbehållna.</p>
+        <p>Bergslagsgatan 72, Lesjöfors | VD: Peter Hagelbössa (f. 1978)</p>
+    </div>
+    </footer>
+    <div class="k"><p>Nås endast via Swish, 076 282 87 72</p></div>
+</body>
+</html>

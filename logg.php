@@ -57,21 +57,26 @@ $level = isset($_SESSION['level']) ? intval($_SESSION['level']) : 0;
                 <a href="an.php">Ärende</a>
             <?php } ?>
             <?php if($level >= 10){ ?>
-                <a href="logout.php">Logga ut</a>
+                <a href="logout.php">Logga Ut</a>
             <?php } ?>
             <?php if($level >= 100){ ?>
                 <a href="adminpanel.php">Admin</a>
             <?php } ?>
         </div>
     </div>
-    <div class="mid"><img src="flenbg.png" alt=""></div>
+    <div class="mid"></div>
     <?php
     if (isLevel(10)) { ?>
     <div class="box">
+    <div class="box-content">
         <h1 id='welcome'>Välkommen <?=$_SESSION['user']?>!</h1>
-        <p><a href='index.php'id="start" >Till startsidan</a></p>
-        <p><a href='logout.php'id="lo" >Logga ut</a></p>
+        <div class="btns">
+            <a href='index.php' id="start">Till startsidan</a>
+            <a href='logout.php' id="lo">Logga ut</a>
+        </div>
     </div>
+</div>
+
  <?php   } else {
         if (isset($error)) {
             echo "<p style='color:red;'>$error</p>";
